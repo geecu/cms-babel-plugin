@@ -11,7 +11,6 @@ const getDirectories = (srcPath) => fs.readdirSync(srcPath).filter((file) => fs.
 const runFixtures = (fixturesDir) => {
   getDirectories(fixturesDir)
     .forEach((caseName) => {
-      console.log('found directory', caseName)
       it(`should ${caseName.split('-').join(' ')}`, () => {
         const fixtureDir = path.join(fixturesDir, caseName);
         const actualPath = path.join(fixtureDir, 'actual.js');
